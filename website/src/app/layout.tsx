@@ -16,7 +16,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://studioonebynina.vercel.app'),
+  metadataBase: new URL('https://www.studioonebynina.hr'),
   title: {
     default: 'Studio One by Nina | Premium Frizerski Salon Zagreb',
     template: '%s | Studio One by Nina',
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'hr_HR',
-    url: 'https://studioonebynina.vercel.app',
+    url: 'https://www.studioonebynina.hr',
     siteName: 'Studio One by Nina',
     title: 'Studio One by Nina | Premium Frizerski Salon Zagreb',
     description:
@@ -73,9 +73,9 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'HairSalon',
   name: 'Studio One by Nina',
-  image: 'https://studioonebynina.vercel.app/images/heroimg.jpeg',
-  '@id': 'https://studioonebynina.vercel.app',
-  url: 'https://studioonebynina.vercel.app',
+  image: 'https://www.studioonebynina.hr/images/heroimg.jpeg',
+  '@id': 'https://www.studioonebynina.hr',
+  url: 'https://www.studioonebynina.hr',
   telephone: '+385923177942',
   address: {
     '@type': 'PostalAddress',

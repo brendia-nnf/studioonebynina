@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 import { services } from '@/data/services';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://studioonebynina.vercel.app';
+  const baseUrl = 'https://www.studioonebynina.hr';
 
   const serviceUrls = services.map((service) => ({
     url: `${baseUrl}/usluge/${service.slug}`,
