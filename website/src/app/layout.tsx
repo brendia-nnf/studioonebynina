@@ -16,7 +16,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://studioonebynina.hr'),
+  metadataBase: new URL('https://studioonebynina.vercel.app'),
   title: {
     default: 'Studio One by Nina | Premium Frizerski Salon Zagreb',
     template: '%s | Studio One by Nina',
@@ -39,17 +39,17 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'hr_HR',
-    url: 'https://studioonebynina.hr',
+    url: 'https://studioonebynina.vercel.app',
     siteName: 'Studio One by Nina',
     title: 'Studio One by Nina | Premium Frizerski Salon Zagreb',
     description:
       'Premium frizerski salon u Zagrebu. Specijalizirani za Cocochoco keratin tretmane, Brendia Pro® ekstenzije i stiliziranje kose.',
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/images/heroimg.jpeg',
         width: 1200,
         height: 630,
-        alt: 'Studio One by Nina',
+        alt: 'Studio One by Nina - Premium Frizerski Salon',
       },
     ],
   },
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     title: 'Studio One by Nina | Premium Frizerski Salon Zagreb',
     description:
       'Premium frizerski salon u Zagrebu. Specijalizirani za Cocochoco keratin tretmane, Brendia Pro® ekstenzije i stiliziranje kose.',
-    images: ['/og-image.jpg'],
+    images: ['/images/heroimg.jpeg'],
   },
   robots: {
     index: true,
@@ -66,9 +66,47 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: '/favicon.ico',
-    shortcut: '/favicon-16x16.png',
-    apple: '/apple-touch-icon.png',
   },
+};
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'HairSalon',
+  name: 'Studio One by Nina',
+  image: 'https://studioonebynina.vercel.app/images/heroimg.jpeg',
+  '@id': 'https://studioonebynina.vercel.app',
+  url: 'https://studioonebynina.vercel.app',
+  telephone: '+385923177942',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Ilica 89',
+    addressLocality: 'Zagreb',
+    postalCode: '10000',
+    addressCountry: 'HR',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 45.81143,
+    longitude: 16.10069,
+  },
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      opens: '09:00',
+      closes: '20:00',
+    },
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: 'Saturday',
+      opens: '09:00',
+      closes: '15:00',
+    },
+  ],
+  priceRange: '€€€',
+  servesCuisine: 'Hair Salon',
+  description:
+    'Premium frizerski salon u Zagrebu. Specijalizirani za Cocochoco keratin tretmane, Brendia Pro® ekstenzije i stiliziranje kose.',
 };
 
 export default function RootLayout({
@@ -78,6 +116,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="hr" className={`${inter.variable} ${playfair.variable}`}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className="bg-cream-100 text-charcoal-800 font-sans antialiased">
         <SmoothScroll>
           <Header />
