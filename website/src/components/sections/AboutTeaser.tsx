@@ -119,7 +119,7 @@ export function AboutTeaser() {
               </div>
               <div className="w-px bg-charcoal-200" />
               <div>
-                <p className="font-serif text-heading-lg text-charcoal-800">5.0</p>
+                <p className="font-serif text-heading-lg text-charcoal-800">4.7</p>
                 <p className="text-body-sm text-charcoal-500">Ocjena na Google</p>
               </div>
             </div>
